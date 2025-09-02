@@ -1,5 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
-from .serializers import UsuarioSerializer
+from .serializers import UsuarioSerializer,RolSerializer
 from .models import Usuario,Rol
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -63,3 +63,9 @@ class UsuarioViewSet(ModelViewSet):
         usuario.save()
 
         return Response({"satus": "El doctor NO esta en vacaciones "})
+
+
+
+class RolViewSet(ModelViewSet):  
+    serializer_class = RolSerializer
+    queryset = Rol.objects.all()

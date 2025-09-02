@@ -12,10 +12,9 @@ class Usuario(models.Model):
 
     correo = models.EmailField(max_length=45, unique=True)
     foto = models.TextField(max_length=150, null=True, blank=True)
-    contrasena = models.CharField(max_length=45)
+    contrasena = models.CharField(max_length=50)
     
     rol = models.ForeignKey(Rol, on_delete=models.CASCADE, related_name='usuarios')
-    libre = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nombre

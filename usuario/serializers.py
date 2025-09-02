@@ -22,8 +22,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
             'correo',
             'foto',
             'contrasena',
-            'rol',
-            'libre'
+            'rol'
         ]
         #Serialiadores anidados
         
